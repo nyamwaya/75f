@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
  * Created by Aleckson on 6/13/2017.
  */
 
-public class AirQualityModelResponse {
+public class AirQualityModel {
 
         @SerializedName("datetime")
         @Expose
