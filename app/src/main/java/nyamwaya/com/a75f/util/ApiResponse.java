@@ -30,4 +30,12 @@ public class ApiResponse {
     public void setAirQualityModel(AirQualityModel airQualityModel) {
         this.airQualityModel = airQualityModel;
     }
+
+    public Throwable getError() {
+        return error;
+    }
+
+    public void setError(Throwable error) {
+        this.error = error;
+    }
 }

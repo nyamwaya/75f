@@ -22,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * It will return the data as a LiveData.
  */
 
-public class AirQualityRepositoryImpl {
+public class AirQualityRepositoryImpl implements AirQualityRepository{
 
     private static final String BASEURL = "https://api.breezometer.com";
     private AirQualityApiService mApiService;
