@@ -40,6 +40,16 @@ dependencies {
 
     //Retrofit
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    //Retrofit json converter
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //Gson to de/serialize
+    compile 'com.google.code.gson:gson:2.8.0'
+
+    //Rx Java for smart muilti threading
+    compile 'io.reactivex:rxjava:1.2.1'
+    //Rx android for binding android to rx java
+    compile 'io.reactivex:rxandroid:1.2.1'
+    //Retrofit Rxjava converter
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
 
 }
