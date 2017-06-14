@@ -1,13 +1,16 @@
-package nyamwaya.com.a75f;
+package nyamwaya.com.a75f.ui;
 
 import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
+import nyamwaya.com.a75f.R;
 import nyamwaya.com.a75f.models.AirQualityModel;
+import nyamwaya.com.a75f.ui.details.ProfileDetailsActivity;
 import nyamwaya.com.a75f.viewmodel.AirQualityViewModel;
 
 public class MainActivity extends LifecycleActivity {
@@ -20,6 +23,7 @@ public class MainActivity extends LifecycleActivity {
     private AirQualityViewModel mViewModel;
 
     private TextView mTextView;
+    private TextView mLearnMoreTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,22 @@ public class MainActivity extends LifecycleActivity {
 
     private void setupView() {
         mTextView = (TextView) findViewById(R.id.airquality);
+        mLearnMoreTextView = (TextView) findViewById(R.id.learnmore);
+        lauchDetailsActivity();
+
+    }
+
+    private void lauchDetailsActivity(){
+        mLearnMoreTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ProfileDetailsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+t 
 
     }
 }

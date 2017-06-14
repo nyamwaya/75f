@@ -1,4 +1,4 @@
-package nyamwaya.com.a75f.details;
+package nyamwaya.com.a75f.ui.details;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,7 +9,7 @@ import android.view.View;
 
 import nyamwaya.com.a75f.R;
 
-public class ProfileDetails extends AppCompatActivity {
+public class ProfileDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
