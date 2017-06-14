@@ -10,7 +10,7 @@ import retrofit2.http.Query;
  */
 
 public interface AirQualityApiService {
-    @GET("/baqi/")
+    @GET("baqi/")
     Call<AirQualityModel> getAirQuality(
             @Query("lat") String latitude,
             @Query("lon") String longitude,

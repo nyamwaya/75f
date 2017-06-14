@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AirQualityRepositoryImpl implements AirQualityRepository{
 
-    private static final String BASEURL = "https://api.breezometer.com";
+    private static final String BASEURL = "https://api.breezometer.com/";
     private AirQualityApiService mApiService;
 
     public AirQualityRepositoryImpl() {
