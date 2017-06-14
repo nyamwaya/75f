@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">75f</string>
+    <string name="title_activity_profile_details">ProfileDetails</string>
 </resources>
