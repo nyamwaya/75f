@@ -5,7 +5,7 @@ import android.arch.lifecycle.MutableLiveData;
 
 import nyamwaya.com.a75f.models.AirQualityModel;
 import nyamwaya.com.a75f.network.AirQualityApiService;
-import nyamwaya.com.a75f.util.ApiResponse;
+import nyamwaya.com.a75f.models.ApiResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

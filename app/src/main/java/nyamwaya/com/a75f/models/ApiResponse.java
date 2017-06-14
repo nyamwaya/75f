@@ -1,4 +1,4 @@
-package nyamwaya.com.a75f.util;
+package nyamwaya.com.a75f.models;
 
 import nyamwaya.com.a75f.models.AirQualityModel;
 

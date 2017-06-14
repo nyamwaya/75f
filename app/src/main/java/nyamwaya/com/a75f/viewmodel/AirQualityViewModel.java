@@ -7,7 +7,7 @@ import android.support.annotation.NonNull;
 
 import nyamwaya.com.a75f.repository.AirQualityRepository;
 import nyamwaya.com.a75f.repository.AirQualityRepositoryImpl;
-import nyamwaya.com.a75f.util.ApiResponse;
+import nyamwaya.com.a75f.models.ApiResponse;
 
 /**
  * Created by Aleckson on 6/13/2017.
