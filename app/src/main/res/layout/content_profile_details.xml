@@ -8,4 +8,6 @@
     tools:context=".ui.details.ProfileDetailsActivity"
     tools:showIn="@layout/activity_profile_details">
 
+
+
 </android.support.constraint.ConstraintLayout>

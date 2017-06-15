@@ -4,6 +4,7 @@ import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -29,9 +30,16 @@ public class MainActivity extends LifecycleActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setupView();
+
+        initializeLiveData();
+
+    }
+
+    private void initializeLiveData(){
         mViewModel = ViewModelProviders.of(this).get(AirQualityViewModel.class);
         mViewModel.loadAirQuality(latitude, longitude, apikey);
-        setupView();
+
 
         //Handle changes emitted by LiveData
         mViewModel.getApiResponse().observe(this, apiResponse -> {
@@ -57,6 +65,7 @@ public class MainActivity extends LifecycleActivity {
     }
 
     private void setupView() {
+
         mTextView = (TextView) findViewById(R.id.airquality);
         mLearnMoreTextView = (TextView) findViewById(R.id.learnmore);
         lauchDetailsActivity();
@@ -64,16 +73,11 @@ public class MainActivity extends LifecycleActivity {
     }
 
     private void lauchDetailsActivity(){
-        mLearnMoreTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), ProfileDetailsActivity.class);
-                startActivity(intent);
-            }
+        mLearnMoreTextView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), ProfileDetailsActivity.class);
+            startActivity(intent);
         });
 
-
-t 
 
     }
 }
