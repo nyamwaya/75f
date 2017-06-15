@@ -4,10 +4,12 @@ import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.os.Parcelable;
+import android.provider.ContactsContract;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
+
+import java.io.Serializable;
 
 import nyamwaya.com.a75f.R;
 import nyamwaya.com.a75f.models.AirQualityModel;
@@ -36,7 +38,7 @@ public class MainActivity extends LifecycleActivity {
 
     }
 
-    private void initializeLiveData(){
+    private void initializeLiveData() {
         mViewModel = ViewModelProviders.of(this).get(AirQualityViewModel.class);
         mViewModel.loadAirQuality(latitude, longitude, apikey);
 
@@ -57,27 +59,27 @@ public class MainActivity extends LifecycleActivity {
                 + " today. Your main pollutant is, "
                 + airQualityModel.getDominantPollutantDescription());
 
-    }
+        final String description = airQualityModel.getBreezometerDescription();
 
+        launchDetailsActivivty(description);
+
+    }
 
     private void handleError(Throwable error) {
         Log.v(TAG, "Something went wrong while fetching data");
     }
 
     private void setupView() {
-
         mTextView = (TextView) findViewById(R.id.airquality);
         mLearnMoreTextView = (TextView) findViewById(R.id.learnmore);
-        lauchDetailsActivity();
-
     }
 
-    private void lauchDetailsActivity(){
+    private void launchDetailsActivivty(String description) {
         mLearnMoreTextView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ProfileDetailsActivity.class);
+            intent.putExtra(ProfileDetailsActivity.EXTRA_NAME, description );
             startActivity(intent);
         });
-
 
     }
 }

@@ -1,5 +1,6 @@
 package nyamwaya.com.a75f.ui.details;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -10,8 +11,13 @@ import android.view.Menu;
 import android.view.View;
 
 import nyamwaya.com.a75f.R;
+import nyamwaya.com.a75f.viewmodel.AirQualityViewModel;
 
 public class ProfileDetailsActivity extends AppCompatActivity {
+
+    private AirQualityViewModel mAirQuality;
+   // private String description;
+    public static final String EXTRA_NAME = "description";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +27,26 @@ public class ProfileDetailsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        Intent intent = getIntent();
+        final String description = intent.getStringExtra(EXTRA_NAME);
+/*
 
-     /*   CollapsingToolbarLayout collapsingToolbar =
-                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        collapsingToolbar.setTitle("Air Quality");
+        Intent intent = this.getIntent();
+        Bundle bundle = intent.getExtras();
 
 */
+
+       // description = (String) bundle.get("description");
+
+        CollapsingToolbarLayout collapsingToolbar =
+                (CollapsingToolbarLayout) findViewById(R.id.main_collapsing);
+        collapsingToolbar.setTitle(description);
+
+
+
+ //       mAirQuality = (AirQualityViewModel) bundle.getSerializable("value");
+
+
     }
 
 /*    @Override
