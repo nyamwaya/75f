@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:padding="16dp"
             android:text="Air Quality"
-            android:textSize="25sp"
+            android:textSize="24sp"
             tools:ignore="RtlHardcoded"/>
 
         <TextView

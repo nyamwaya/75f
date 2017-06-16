@@ -76,7 +76,7 @@ public class MainActivity extends LifecycleActivity {
         mLearnMoreTextView = (TextView) findViewById(R.id.learnmore);
     }
 
-    private void launchDetailsActivivty(String outside, String children, String sports, String health, String inside, String description) {
+    private void launchDetailsActivivty(String description, String children, String sports, String health, String inside, String outside) {
         mLearnMoreTextView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ProfileDetailsActivity.class);
             intent.putExtra(ProfileDetailsActivity.DESCRIPTION, description);

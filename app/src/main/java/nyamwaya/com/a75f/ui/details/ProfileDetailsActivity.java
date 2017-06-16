@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 import nyamwaya.com.a75f.R;
 import nyamwaya.com.a75f.viewmodel.AirQualityViewModel;
@@ -21,6 +22,7 @@ public class ProfileDetailsActivity extends AppCompatActivity {
     public static final String INSIDE = "inside";
 
     private CollapsingToolbarLayout collapsingToolbar;
+    private TextView mChildReco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class ProfileDetailsActivity extends AppCompatActivity {
 
     private void setupview() {
         collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.main_collapsing);
+        mChildReco = (TextView) findViewById(R.id.childreco);
     }
 
     private void getIntentsFromMainActivity() {
@@ -53,6 +56,7 @@ public class ProfileDetailsActivity extends AppCompatActivity {
 
     private void setData(String description, String children, String sports, String health, String inside, String outside) {
         collapsingToolbar.setTitle(description);
+        mChildReco.setText(children);
     }
 
 
