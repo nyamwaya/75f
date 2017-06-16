@@ -4,12 +4,8 @@ import android.arch.lifecycle.LifecycleActivity;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.TextView;
-
-import java.io.Serializable;
 
 import nyamwaya.com.a75f.R;
 import nyamwaya.com.a75f.models.AirQualityModel;
@@ -61,7 +57,13 @@ public class MainActivity extends LifecycleActivity {
 
         final String description = airQualityModel.getBreezometerDescription();
 
-        launchDetailsActivivty(description);
+        final String children = airQualityModel.getRandomRecommendations().getChildren();
+        final String sports = airQualityModel.getRandomRecommendations().getSport();
+        final String health = airQualityModel.getRandomRecommendations().getHealth();
+        final String inside = airQualityModel.getRandomRecommendations().getInside();
+        final String outside = airQualityModel.getRandomRecommendations().getOutside();
+
+        launchDetailsActivivty(description, children,sports,health,inside,outside);
 
     }
 
@@ -74,10 +76,15 @@ public class MainActivity extends LifecycleActivity {
         mLearnMoreTextView = (TextView) findViewById(R.id.learnmore);
     }
 
-    private void launchDetailsActivivty(String description) {
+    private void launchDetailsActivivty(String outside, String children, String sports, String health, String inside, String description) {
         mLearnMoreTextView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), ProfileDetailsActivity.class);
-            intent.putExtra(ProfileDetailsActivity.EXTRA_NAME, description );
+            intent.putExtra(ProfileDetailsActivity.DESCRIPTION, description);
+            intent.putExtra(ProfileDetailsActivity.CHILDREN, children);
+            intent.putExtra(ProfileDetailsActivity.SPORTS, sports);
+            intent.putExtra(ProfileDetailsActivity.HEALTH, health);
+            intent.putExtra(ProfileDetailsActivity.INSIDE, inside);
+            intent.putExtra(ProfileDetailsActivity.OUTSIDE, outside);
             startActivity(intent);
         });
 
